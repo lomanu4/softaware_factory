@@ -1,5 +1,6 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+
+import 'package:flutter/material.dart';
 
 class FeedScreen extends StatefulWidget {
   const FeedScreen({super.key});
@@ -11,6 +12,8 @@ class FeedScreen extends StatefulWidget {
 class _FeedScreenState extends State<FeedScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(),
+    );
   }
 }
