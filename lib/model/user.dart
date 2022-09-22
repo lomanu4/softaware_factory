@@ -1,5 +1,12 @@
-import 'dart:html';
+import 'dart:convert';
 
+List<User> userModelFromJson(String str) =>
+    List<User>.from(json.decode(str).map((x) => User.fromJson(x)));
+
+String userModelToJson(List<User> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+    
 class User {
   final String id;
   final String name;
