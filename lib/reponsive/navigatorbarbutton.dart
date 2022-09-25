@@ -1,5 +1,5 @@
 
-
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class NavButtonBar extends StatefulWidget {
@@ -10,8 +10,33 @@ class NavButtonBar extends StatefulWidget {
 }
 
 class _NavButtonBarState extends State<NavButtonBar> {
+  late PageController pageConroller;
+  int _page = 0;
+
+  @override
+  void initState() {
+    pageConroller= PageController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
+       
+        children: [],
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        index: _page,
+        height: 60.0,
+        items: [
+          Icon(
+            Icons.home,
+            color: _page == 0 ? Colors.black : Colors.amber
+          )
+        ],
+      ),
+    );
   }
 }
