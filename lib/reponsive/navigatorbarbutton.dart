@@ -1,6 +1,7 @@
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:softaware_factory/theme/colors.dart';
 
 class NavButtonBar extends StatefulWidget {
   const NavButtonBar({super.key});
@@ -33,7 +34,7 @@ class _NavButtonBarState extends State<NavButtonBar> {
         items: [
           Icon(
             Icons.home,
-            color: _page == 0 ? Colors.black : Colors.amber
+            color: _page == 0  ? AppColor.primaryColor : AppColor.accentColor
           )
         ],
       ),
