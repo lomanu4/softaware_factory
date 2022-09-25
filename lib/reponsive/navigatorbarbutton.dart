@@ -2,6 +2,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:softaware_factory/theme/colors.dart';
+import 'package:softaware_factory/utils/global_varriable.dart';
 
 class NavButtonBar extends StatefulWidget {
   const NavButtonBar({super.key});
@@ -42,7 +43,7 @@ class _NavButtonBarState extends State<NavButtonBar> {
         physics: const NeverScrollableScrollPhysics(),
         controller: pageConroller,
         onPageChanged: onPagechanged,
-        children: [],
+        children: homeScreenitems,
       ),
       bottomNavigationBar: CurvedNavigationBar(
         index: _page,
