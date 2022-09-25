@@ -19,6 +19,7 @@ class _PostcardState extends State<Postcard> {
     final userprovider = Provider.of<GetAllUsers>(context).users;
     return Consumer<GetPostProvider>(builder: (context, value, child) {
       return ListView.builder(
+        itemCount:userprovider.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 5.0),
