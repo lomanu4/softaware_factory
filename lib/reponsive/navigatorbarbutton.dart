@@ -21,11 +21,27 @@ class _NavButtonBarState extends State<NavButtonBar> {
   }
 
   @override
+  void dispose() {
+    pageConroller.dispose();
+    super.dispose();
+  }
+
+  void onPagechanged (int page) {
+    setState(() {
+      _page = page;
+    });
+  }
+
+  void navigationTapped (int page) {
+    pageConroller.jumpToPage(page);
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
-       
+        controller: pageConroller,
+        onPageChanged: onPagechanged,
         children: [],
       ),
       bottomNavigationBar: CurvedNavigationBar(
@@ -35,8 +51,17 @@ class _NavButtonBarState extends State<NavButtonBar> {
           Icon(
             Icons.home,
             color: _page == 0  ? AppColor.primaryColor : AppColor.accentColor
-          )
+          ),
+           Icon(
+            Icons.person,
+            color: _page == 1
+                ? AppColor.primaryColor
+                : AppColor.primaryColorLight,
+          ),
         ],
+        animationCurve: Curves.easeInOut,
+        animationDuration: const Duration(milliseconds: 200),
+        onTap: navigationTapped,
       ),
     );
   }
