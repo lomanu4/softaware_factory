@@ -42,7 +42,7 @@ dev_dependencies:
     sdk: flutter
   curved_navigation_bar: ^1.0.3
   http: ^0.13.5
-  provider: ^6.0.3
+  provider:
   timeago: ^3.3.0
   cached_network_image: ^3.2.2
   # The "flutter_lints" package below contains a set of recommended lints to
