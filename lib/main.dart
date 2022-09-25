@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'reponsive/navigatorbarbutton.dart';
+
 void main() {
   runApp(const HomePage());
 }
@@ -9,6 +11,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      title: 'Software Factory',
+      theme: ThemeData(
+        primaryColor: Colors.blue
+      ),
+      home: const NavButtonBar (),
+    );
   }
 }
