@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:softaware_factory/utils/global_variable.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:softaware_factory/theme/colors/colors.dart';
@@ -13,11 +12,13 @@ class NavButtonBar extends StatefulWidget {
 }
 
 class _NavButtonBarState extends State<NavButtonBar> {
+
   late PageController pagecontroller;
   int _page = 0;
   @override
   void initState() {
     pagecontroller = PageController();
+    
     super.initState();
   }
 
@@ -39,6 +40,7 @@ class _NavButtonBarState extends State<NavButtonBar> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
@@ -54,13 +56,13 @@ class _NavButtonBarState extends State<NavButtonBar> {
             Icons.home,
             color: _page == 0
                 ? AppColors.primaryColor
-                : AppColors.primaryColorLight,
+                : AppColors.primaryColor,
           ),
           Icon(
             Icons.person,
             color: _page == 0
                 ? AppColors.primaryColor
-                : AppColors.accentColorLight,
+                : AppColors.primaryColorLight,
           ),
         ],
         animationCurve: Curves.easeInOut,
